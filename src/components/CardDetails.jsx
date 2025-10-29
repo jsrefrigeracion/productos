@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { API_URL } from "../js/variables";
 import { hexToUrl } from "../js/functions";
+import arrowBack from "../assets/arrow-back.svg";
 export const CardDetails = ({ producto, onClose }) => {
   const [imagen, setImagen] = useState(null);
   useEffect(() => {
@@ -31,7 +32,9 @@ export const CardDetails = ({ producto, onClose }) => {
     <>
       <div className="card-details-container">
         <header>
-          <button onClick={onClose}>X</button>
+          <button onClick={onClose}>
+            <img src={arrowBack} alt="" width={20} height={20} />
+          </button>
           <h2>Detalles del producto</h2>
         </header>
         <main className="card-details-main">
@@ -41,17 +44,19 @@ export const CardDetails = ({ producto, onClose }) => {
             width={100}
             className="card-image"
           />
-          <h1>{producto.Nombre}</h1>
-          <div>
-            <p>Código: {producto.Codigo}</p>
-            <p>|</p>
-            <p>Stock: {producto.StockActual}</p>
+          <div className="card-detail-info">
+            <h1>{producto.Nombre}</h1>
+            <div className="card-details-main-code-stock">
+              <p>Código: {producto.Codigo}</p>
+              <p>|</p>
+              <p>Stock: {producto.StockActual}</p>
+            </div>
           </div>
           <div className="card-details-main-prices">
             <h3>Precios</h3>
-            <p>Precio Público: {producto.PrecioPublico}</p>
-            <p>Precio Técnicos: {producto.PrecioTecnico}</p>
-            <p>Precio Mayorista: {producto.PrecioMayorista}</p>
+            <p>Precio Público: ${producto.PrecioPublico}</p>
+            <p>Precio Técnicos: ${producto.PrecioTecnico}</p>
+            <p>Precio Mayorista: ${producto.PrecioMayorista}</p>
           </div>
         </main>
       </div>
