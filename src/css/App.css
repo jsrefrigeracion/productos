@@ -1,0 +1,13 @@
+@import "./base.css";
+@import "./header.css";
+@import "./footer.css";
+@import "./card.css";
+@import "./card-details.css";
+
+body {
+  font-family: system-ui, sans-serif;
+  height: auto;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  line-height: 1.5;
+}

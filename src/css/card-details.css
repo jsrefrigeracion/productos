@@ -1,0 +1,9 @@
+.card-details-container {
+  width: 100%;
+
+  border: 1px solid red;
+}
+
+.card-details-container header {
+  display: flex;
+}

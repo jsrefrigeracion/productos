@@ -1,0 +1,23 @@
+footer ul {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  color: var(--primary-color);
+  border-top: 1px solid #3333336e;
+}
+
+footer ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  color: var(--primary-color);
+  text-align: center;
+}
+
+:root {
+  --primary-color: #333;
+  --secondary-color: #f5f5f5;
+}

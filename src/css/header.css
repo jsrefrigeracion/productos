@@ -1,0 +1,20 @@
+header h1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+header input {
+  margin: 0 auto;
+  display: block;
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+}
+
+header {
+  margin-bottom: 25px;
+}
