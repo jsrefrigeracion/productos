@@ -7,3 +7,8 @@ export const useCardStore = create((set) => ({
     set({ productoSeleccionado: producto }),
   setMostrarDetalles: (mostrar) => set({ mostrarDetalles: mostrar }),
 }));
+
+export const useStockStore = create((set) => ({
+  stockActual: 0,
+  setStockActual: (nuevoStock) => set({ stockActual: nuevoStock })
+}))

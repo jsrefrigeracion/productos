@@ -10,6 +10,7 @@ export const Card = ({ productos }) => {
     setMostrarDetalles,
   } = useCardStore();
 
+
   if (!productos.length) {
     return (
       <div className="card">

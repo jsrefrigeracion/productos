@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import { API_URL } from "../js/variables";
 import { hexToUrl } from "../js/functions";
 import arrowBack from "../assets/arrow-back.svg";
+import { EditStock } from "./EditStock";
 export const CardDetails = ({ producto, onClose }) => {
   const [imagen, setImagen] = useState(null);
+  
+
   useEffect(() => {
     const obtenerImagen = async () => {
       try {
@@ -51,6 +54,7 @@ export const CardDetails = ({ producto, onClose }) => {
               <p>|</p>
               <p>Stock: {producto.StockActual}</p>
             </div>
+            <EditStock stockActual={producto.StockActual} />
           </div>
           <div className="card-details-main-prices">
             <h3>Precios</h3>
