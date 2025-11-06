@@ -5,6 +5,26 @@ import arrowBack from "../assets/arrow-back.svg";
 import { EditStock } from "./EditStock";
 export const CardDetails = ({ producto, onClose }) => {
   const [imagen, setImagen] = useState(null);
+  const [stock, setStock] = useState(0);
+
+  const actualizarStock = (stock) => {
+    setStock(stock);
+  };
+  useEffect(() => {
+    const obtenerStock = async () => {
+      try {
+        const response = await fetch(
+          `${API_URL}/api/productosStock?idArticulo=${producto.Codigo}`
+        );
+        const data = await response.json();
+        setStock(data.data[0].StockActual);
+        console.log(stock);
+      } catch (error) {
+        console.error("Error al obtener el stock:", error);
+      }
+    };
+    obtenerStock();
+  }, [stock, producto]);
 
   useEffect(() => {
     const obtenerImagen = async () => {
@@ -50,9 +70,12 @@ export const CardDetails = ({ producto, onClose }) => {
             <div className="card-details-main-code-stock">
               <p>Código: {producto.Codigo}</p>
               <p>|</p>
-              <p>Stock: {producto.StockActual}</p>
+              <p>Stock: {stock}</p>
             </div>
-            <EditStock idArticulo={producto.Codigo} />
+            <EditStock
+              idArticulo={producto.Codigo}
+              actualizarStock={actualizarStock}
+            />
           </div>
           <div className="card-details-main-prices">
             <h3>Precios</h3>

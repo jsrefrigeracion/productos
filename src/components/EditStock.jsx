@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PopUp } from "./PopUp";
 
-export const EditStock = ({ idArticulo }) => {
+export const EditStock = ({ idArticulo, actualizarStock }) => {
   const [mostrarInput, setMostrarInput] = useState(false);
   const [stock, setStock] = useState(0);
   const [mostrarPopUp, setMostrarPopUp] = useState(false);
@@ -38,6 +38,7 @@ export const EditStock = ({ idArticulo }) => {
             value={stock}
             idArticulo={idArticulo}
             handleCancelar={handleCancelar}
+            actualizarStock={actualizarStock}
           />
         )}
       </div>

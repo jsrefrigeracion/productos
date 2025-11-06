@@ -1,6 +1,11 @@
 import { API_URL } from "../js/variables";
 import axios from "axios";
-export const PopUp = ({ value, idArticulo, handleCancelar }) => {
+export const PopUp = ({
+  value,
+  idArticulo,
+  handleCancelar,
+  actualizarStock,
+}) => {
   const handleCerrar = () => {
     handleCancelar();
   };
@@ -12,9 +17,10 @@ export const PopUp = ({ value, idArticulo, handleCancelar }) => {
         stock,
       });
 
-      console.log("Respuesta del servidor:", response.data);
       alert("Stock actualizado correctamente");
       handleCerrar();
+      actualizarStock(stock);
+      return response.data;
     } catch (error) {
       console.error("Error:", error);
       alert("No se pudo actualizar el stock");
