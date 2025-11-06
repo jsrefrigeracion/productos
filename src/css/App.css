@@ -3,6 +3,8 @@
 @import "./footer.css";
 @import "./card.css";
 @import "./card-details.css";
+@import "./edit-stock.css";
+@import "./pop-up.css";
 
 body {
   font-family: system-ui, sans-serif;

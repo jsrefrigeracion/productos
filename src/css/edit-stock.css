@@ -1,0 +1,22 @@
+.edit-stock-container {
+  margin-top: 1rem;
+  display: flex;
+  gap: 10px;
+}
+
+.edit-stock-container button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.edit-stock-container input {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}

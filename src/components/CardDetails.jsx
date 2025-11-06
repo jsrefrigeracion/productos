@@ -5,7 +5,6 @@ import arrowBack from "../assets/arrow-back.svg";
 import { EditStock } from "./EditStock";
 export const CardDetails = ({ producto, onClose }) => {
   const [imagen, setImagen] = useState(null);
-  
 
   useEffect(() => {
     const obtenerImagen = async () => {
@@ -15,7 +14,6 @@ export const CardDetails = ({ producto, onClose }) => {
         );
         const data = await response.json();
         setImagen(data.data[0]);
-        console.log(data.data[0]);
       } catch (error) {
         console.error("Error al obtener la imagen:", error);
       }
@@ -54,7 +52,7 @@ export const CardDetails = ({ producto, onClose }) => {
               <p>|</p>
               <p>Stock: {producto.StockActual}</p>
             </div>
-            <EditStock stockActual={producto.StockActual} />
+            <EditStock idArticulo={producto.Codigo} />
           </div>
           <div className="card-details-main-prices">
             <h3>Precios</h3>
