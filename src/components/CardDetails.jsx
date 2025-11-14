@@ -18,7 +18,6 @@ export const CardDetails = ({ producto, onClose }) => {
         );
         const data = await response.json();
         setStock(data.data[0].StockActual);
-        console.log(stock);
       } catch (error) {
         console.error("Error al obtener el stock:", error);
       }
@@ -33,7 +32,20 @@ export const CardDetails = ({ producto, onClose }) => {
           `${API_URL}/api/productosImagen?idArticulo=${producto.Codigo}`
         );
         const data = await response.json();
-        setImagen(data.data[0]);
+        
+        try {
+              const item = data?.data?.[0] ?? null;
+
+              const imagenFinal = item?.Imagen?.data
+                ? hexToUrl(item.Imagen.data)
+                : "/public/default.webp";
+
+              setImagen(imagenFinal);
+            } catch (error) {
+              console.error("Error procesando la imagen:", error);
+              setImagen("/public/default.webp");
+            }
+        
       } catch (error) {
         console.error("Error al obtener la imagen:", error);
       }
@@ -60,7 +72,7 @@ export const CardDetails = ({ producto, onClose }) => {
         </header>
         <main className="card-details-main">
           <img
-            src={hexToUrl(imagen.Imagen.data)}
+            src={imagen}
             alt=""
             width={100}
             className="card-image"

@@ -2,7 +2,7 @@ export const Header = ({ onBuscar }) => {
   return (
     <>
       <header>
-        <h1>JS Refrigeracion</h1>
+        <h1>JS Refrigeración</h1>
         <input
           type="text"
           name="barraBusqueda"
